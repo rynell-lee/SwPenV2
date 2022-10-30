@@ -1,0 +1,58 @@
+{
+  "gender": ["Male", "Female"],
+  "length": ["Short course", "Long Course"],
+  "stroke": ["Freestyle", "Breaststroke", "Backstroke", "Butterfly", "Medley"],
+  "event": {
+    "shortCourse": {
+      "individual": {
+        "50": ["Freestyle", "Breaststroke", "Backstroke", "Butterfly"],
+        "100": [
+          "Freestyle",
+          "Breaststroke",
+          "Backstroke",
+          "Butterfly",
+          "Medley"
+        ],
+        "200": [
+          "Freestyle",
+          "Breaststroke",
+          "Backstroke",
+          "Butterfly",
+          "Medley"
+        ],
+        "400": ["Freestyle", "Medley"],
+        "800": ["Freestyle"],
+        "1500": ["Freestyle"]
+      },
+      "team": {
+        "4X50(Relay)": ["Freestyle", "Medley"],
+        "4X50(MixedRelay)": ["Freestyle", "Medley"],
+        "4X100(Relay)": ["Freestyle", "Medley"],
+        "4X100(MixedRelay)": ["Freestyle", "Medley"],
+        "4X200(Relay)": ["Freestyle"]
+      }
+    },
+    "longCourse": {
+      "individual": {
+        "50": ["Freestyle", "Breaststroke", "Backstroke", "Butterfly"],
+        "100": ["Freestyle", "Breaststroke", "Backstroke", "Butterfly"],
+        "200": [
+          "Freestyle",
+          "Breaststroke",
+          "Backstroke",
+          "Butterfly",
+          "Medley"
+        ],
+        "400": ["Freestyle", "Medley"],
+        "800": ["Freestyle"],
+        "1500": ["Freestyle"]
+      },
+      "team": {
+        "4X100(Relay)": ["Freestyle", "Medley"],
+        "4X100(MixedRelay)": ["Freestyle", "Medley"],
+        "4X200(Relay)": ["Freestyle"]
+      }
+    }
+  },
+  "raceType": ["Competition", "Training"]
+}

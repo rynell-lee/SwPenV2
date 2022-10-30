@@ -1,20 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { createAppContainer } from "react-navigation";
+import { createStackNavigator } from "react-navigation-stack";
+// import CategoryScreen from "./src/screens/CategoryScreen";
+import HomeScreen from "./src/screens/HomeScreen";
+// import PoolLengthScreen from "./src/screens/PoolLengthScreen";
+// import MetadataScreen from "./src/screens/MetadataScreen";
+import TestScreen from "./src/screens/TestScreen";
+// import { Provider } from "./src/context/BlogContext"; //curly braces for named exports
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const navigator = createStackNavigator(
+  {
+    Home: HomeScreen,
+    // Metadata: MetadataScreen,
+    // Category: CategoryScreen,
+    // PoolLength: PoolLengthScreen,
+    Test: TestScreen,
   },
-});
+  {
+    initialRouteName: "Home",
+    defaultNavigationOptions: {
+      title: "swimmerPen version 2",
+    },
+  }
+);
+
+const App = createAppContainer(navigator);
+
+//exporting into our own export component
+export default () => {
+  return <App />;
+};
