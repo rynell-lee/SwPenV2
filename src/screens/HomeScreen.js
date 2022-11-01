@@ -1,38 +1,84 @@
-import React from "react";
-import { View, Text, StyleSheet, TouchableOpacity, Button } from "react-native";
+import React, { useState, useContext } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Button,
+  ScrollView,
+} from "react-native";
 import { FontAwesome5, FontAwesome } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
-// import { vw, vh } from "react-native-viewport-units";
+import ModalBox1 from "../components/Modal1";
 
 const HomeScreen = ({ navigation }) => {
+  //modal toggling
+  const [isModalVisible, setModalVisible] = useState(false);
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
+  //generate data object
+  const [dataObj, setDataObj] = useState();
+  const generateDataObj = () => {
+    setDataObj({
+      id: Math.floor(Math.random() * 99999),
+      Category: "",
+      "Pool Length": "",
+      "Type of race": "",
+      // Round: "Training",
+      Name: "",
+    });
+  };
+
   return (
     <View style={styles.view}>
-      <Text style={styles.headers}>Home Screen</Text>
-      <TouchableOpacity onPress={() => navigation.navigate("Category")}>
-        <FontAwesome5
-          name="swimmer"
-          size={200}
-          style={styles.icons}
-          color="black"
-        />
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Ionicons
-          name="cloud-sharp"
-          size={200}
-          style={styles.icons}
-          color="black"
-        />
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <FontAwesome
-          name="newspaper-o"
-          size={200}
-          style={styles.icons}
-          color="black"
-        />
-      </TouchableOpacity>
-      <Button title="test" onPress={() => navigation.navigate("Test")}></Button>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scroll}
+      >
+        <Text style={styles.headers}>Home Screen</Text>
+        <TouchableOpacity
+          onPress={() => {
+            toggleModal();
+            generateDataObj();
+          }}
+        >
+          <FontAwesome5
+            name="swimmer"
+            size={200}
+            style={styles.icons}
+            color="black"
+          />
+          <ModalBox1
+            visible={isModalVisible}
+            toggle={toggleModal}
+            picker={{ condition: true, option: 1 }}
+            obj={dataObj}
+            navigation={navigation.navigate}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Ionicons
+            name="cloud-sharp"
+            size={200}
+            style={styles.icons}
+            color="black"
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <FontAwesome
+            name="newspaper-o"
+            size={200}
+            style={styles.icons}
+            color="black"
+          />
+        </TouchableOpacity>
+        <Button
+          title="test"
+          onPress={() => navigation.navigate("Test")}
+        ></Button>
+      </ScrollView>
     </View>
   );
 };
@@ -43,10 +89,20 @@ const styles = StyleSheet.create({
     paddingBottom: 100,
   },
   view: {
-    alignSelf: "center",
+    flex: 1,
+    // flexDirection: "row",
+    // justifyContent: "center",
+    // alignItems: "center",
   },
   icons: {
     paddingBottom: 100,
+  },
+  scroll: {
+    justifyContent: "center",
+    // flexGrow: 1,
+    alignItems: "center",
+    // backgroundColor: "pink",
+    // marginHorizontal: 0,
   },
 });
 

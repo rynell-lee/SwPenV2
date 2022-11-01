@@ -1,0 +1,21 @@
+1. rn picker may need cocoapods thingy
+-  npx pod-install ?
+2. rn picker no place holder (get back to this later)
+3. for testing purpose, using json-server now (maybe use mongo next time)
+4. double rendering console logs for some reason..
+5. currently the modal in homescreen for analysis is super catered for analysis
+6. 
+ // "orientation": "portrait" > under expo to lock orientation
+ 7. userinterfacestye used to be 'light'
+
+8.fontawesome icons not configured
+
+
+
+Libraries installed:
+1. react-native-picker (used)
+2. react-native-modalize (unused for now)
+3. 
+
+whats somewhat done;
+-metadata able to capture all detials needed prior to screen recording but its stored in a state for now.

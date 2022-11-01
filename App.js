@@ -6,12 +6,13 @@ import HomeScreen from "./src/screens/HomeScreen";
 // import PoolLengthScreen from "./src/screens/PoolLengthScreen";
 // import MetadataScreen from "./src/screens/MetadataScreen";
 import TestScreen from "./src/screens/TestScreen";
-// import { Provider } from "./src/context/BlogContext"; //curly braces for named exports
+import { Provider } from "./src/context/MetadataContext";
+import MetadataScreen from "./src/screens/MetaDataScreen";
 
 const navigator = createStackNavigator(
   {
     Home: HomeScreen,
-    // Metadata: MetadataScreen,
+    Metadata: MetadataScreen,
     // Category: CategoryScreen,
     // PoolLength: PoolLengthScreen,
     Test: TestScreen,
@@ -28,5 +29,9 @@ const App = createAppContainer(navigator);
 
 //exporting into our own export component
 export default () => {
-  return <App />;
+  return (
+    <Provider>
+      <App />
+    </Provider>
+  );
 };
