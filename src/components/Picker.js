@@ -36,7 +36,7 @@ const PickerSelect = (props) => {
           selectedValue={selectedOption}
           onValueChange={(itemValue, itemIndex) => setSelectedOption(itemValue)}
         >
-          <Picker.Item label={"Please select..."} value={false} />
+          <Picker.Item label={"Please select..."} value={false} key={10000} />
           {callback}
         </Picker>
       </View>

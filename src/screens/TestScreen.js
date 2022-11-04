@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import Modal from "react-native-modal";
-
+import showAlert from "../components/Alert";
 const TestScreen = () => {
   //picker
   const [selectedLanguage, setSelectedLanguage] = useState();
@@ -24,7 +24,7 @@ const TestScreen = () => {
   return (
     <View>
       <Text>Test Screen</Text>
-      <Picker
+      {/* <Picker
         selectedValue={selectedLanguage}
         onValueChange={(itemValue, itemIndex) => setSelectedLanguage(itemValue)}
       >
@@ -55,7 +55,8 @@ const TestScreen = () => {
             <Button title="Hide modal" onPress={toggleModal} />
           </View>
         </View>
-      </Modal>
+      </Modal> */}
+      <Button title="alert" onPress={showAlert} />
     </View>
   );
 };
