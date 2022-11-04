@@ -8,11 +8,13 @@ import HomeScreen from "./src/screens/HomeScreen";
 import TestScreen from "./src/screens/TestScreen";
 import { Provider } from "./src/context/MetadataContext";
 import MetadataScreen from "./src/screens/MetaDataScreen";
+import MdModal2 from "./src/components/MdModal2";
 
 const navigator = createStackNavigator(
   {
     Home: HomeScreen,
     Metadata: MetadataScreen,
+    Modal2: MdModal2,
     // Category: CategoryScreen,
     // PoolLength: PoolLengthScreen,
     Test: TestScreen,

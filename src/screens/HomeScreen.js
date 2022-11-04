@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { FontAwesome5, FontAwesome } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
-import ModalBox1 from "../components/Modal1";
+import MdModal1 from "../components/MdModal1";
 
 const HomeScreen = ({ navigation }) => {
   //modal toggling
@@ -23,11 +23,11 @@ const HomeScreen = ({ navigation }) => {
   const generateDataObj = () => {
     setDataObj({
       id: Math.floor(Math.random() * 99999),
-      Category: "",
-      "Pool Length": "",
-      "Type of race": "",
-      // Round: "Training",
-      Name: "",
+      Category: false,
+      "Pool Length": false,
+      "Type of race": false,
+      // // Round: "Training",
+      // Name: "",
     });
   };
 
@@ -50,7 +50,7 @@ const HomeScreen = ({ navigation }) => {
             style={styles.icons}
             color="black"
           />
-          <ModalBox1
+          <MdModal1
             visible={isModalVisible}
             toggle={toggleModal}
             picker={{ condition: true, option: 1 }}

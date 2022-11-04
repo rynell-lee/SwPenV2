@@ -9,6 +9,9 @@
  7. userinterfacestye used to be 'light'
 
 8.fontawesome icons not configured
+9. meta modal seems to be getting better but i am unable to show warning modal pop up (done)
+10. MetadataScreen not used for now, being used with modals
+11. mdmodal2: havent confirm if user has filled in all details before moving on to camera (revist later, now move to build camera stuff)
 
 
 
