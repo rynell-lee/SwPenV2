@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
 import { useEffect, useState, useRef } from "react";
-import { Camera } from "expo-camera";
+import { Camera } from "react-native-vision-camera";
 import { Video } from "expo-av";
 import { shareAsync } from "expo-sharing";
 import * as MediaLibrary from "expo-media-library";
