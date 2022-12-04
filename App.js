@@ -9,6 +9,9 @@ import TestScreen from "./src/screens/TestScreen";
 import { Provider } from "./src/context/MetadataContext";
 import MetadataScreen from "./src/screens/MetaDataScreen";
 import MdModal2 from "./src/components/MdModal2";
+import CameraScreen from "./src/screens/CameraScreen";
+import ActivateCamera from "./src/components/Camera";
+import VideoCamera from "./src/components/VideoCamera";
 
 const navigator = createStackNavigator(
   {
@@ -16,7 +19,8 @@ const navigator = createStackNavigator(
     Metadata: MetadataScreen,
     Modal2: MdModal2,
     // Category: CategoryScreen,
-    // PoolLength: PoolLengthScreen,
+    // PoolLength: PoolLengthScreen,q
+    Camera: VideoCamera,
     Test: TestScreen,
   },
   {

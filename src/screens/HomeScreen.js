@@ -75,6 +75,10 @@ const HomeScreen = ({ navigation }) => {
           />
         </TouchableOpacity>
         <Button
+          title="Camera"
+          onPress={() => navigation.navigate("Camera")}
+        ></Button>
+        <Button
           title="test"
           onPress={() => navigation.navigate("Test")}
         ></Button>
