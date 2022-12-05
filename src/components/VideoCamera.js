@@ -1,9 +1,20 @@
-import { StyleSheet, Text, View, Button, SafeAreaView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  SafeAreaView,
+  Animated,
+} from "react-native";
 import { useEffect, useState, useRef } from "react";
 import { Camera } from "expo-camera";
 import { Video } from "expo-av";
 import { shareAsync } from "expo-sharing";
 import * as MediaLibrary from "expo-media-library";
+
+import GestureHandler, {
+  PinchGestureHandler,
+} from "react-native-gesture-handler";
 
 const VideoCamera = () => {
   let cameraRef = useRef();
@@ -55,6 +66,10 @@ const VideoCamera = () => {
     cameraRef.current.stopRecording();
   };
 
+  // //zoom
+  // const zoom = 0;
+  // const onPinchEvent = Animated.event([{ nativeEvent: { zoom } }]);
+
   if (video) {
     let shareVideo = () => {
       shareAsync(video.uri).then(() => {
@@ -87,7 +102,11 @@ const VideoCamera = () => {
   }
 
   return (
-    <Camera style={styles.container} ref={cameraRef}>
+    // <PinchGestureHandler
+    //   onGestureEvent={onPinchEvent}
+    //   // onHandlerStateChange={}
+    // >
+    <Camera style={styles.container} ref={cameraRef} zoom={0}>
       <View style={styles.buttonContainer}>
         <Button
           title={isRecording ? "Stop Recording" : "Record Video"}
@@ -95,6 +114,7 @@ const VideoCamera = () => {
         />
       </View>
     </Camera>
+    // </PinchGestureHandler>
   );
 };
 
